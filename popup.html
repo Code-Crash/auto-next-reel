@@ -24,6 +24,14 @@
             <label for="intervalInput">Retry Delay (ms)</label>
             <input type="number" id="intervalInput" min="100" step="100" />
         </div>
+        <div class="setting-row">
+            <label for="endPercentageInput">End % to Skip</label>
+            <input type="number" id="endPercentageInput" min="5" max="100" step="1" />
+        </div>
+        <div class="setting-row">
+            <label for="repeatCountInput">Max Repeat</label>
+            <input type="number" id="repeatCountInput" min="0" max="5" />
+        </div>
 
         <p class="note">Skips video when it reaches 99% progress.</p>
         <p class="note_sub">(15+ seconds)</p>

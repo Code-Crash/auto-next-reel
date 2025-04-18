@@ -5,8 +5,8 @@
  */
 
 const DEFAULT_INTERVAL_MS = 100; // Default polling interval
-const END_PERCENTAGE = 0.99;     // Trigger next at 99% completion
-const MAX_REPEAT = 1;            // Max times same video can loop before skipping
+let END_PERCENTAGE = 0.99;     // Trigger next at 99% completion
+let MAX_REPEAT = 1;            // Max times same video can loop before skipping
 
 let currentInterval = null;
 let delayMs = DEFAULT_INTERVAL_MS;
@@ -42,7 +42,7 @@ function startWatcher() {
                 if (repeatCount >= MAX_REPEAT) {
                     const nextBtn = $('button[aria-label="Next video"]');
                     if (nextBtn.length > 0) {
-                        console.log("⏭️ Skipping video (progress >= 99%)");
+                        console.log(`⏭️ Skipping video (progress >= ${Math.round(END_PERCENTAGE * 100)}%) | Repeat: ${repeatCount} | Src: ${currentSrc}`);
                         nextBtn[0].click();
                         repeatCount = 0;
                         lastVideoSrc = null;
@@ -61,10 +61,12 @@ function startWatcher() {
  * and begins video observation.
  */
 chrome.storage.sync.get(
-    { intervalMs: DEFAULT_INTERVAL_MS, enabled: true },
+    { intervalMs: DEFAULT_INTERVAL_MS, enabled: true, endPercentage: 99, maxRepeat: 1 },
     (data) => {
         delayMs = data.intervalMs || DEFAULT_INTERVAL_MS;
         isEnabled = data.enabled !== undefined ? data.enabled : true;
+        END_PERCENTAGE = data.endPercentage / 100;
+        MAX_REPEAT = data.maxRepeat || 1;
         startWatcher();
     }
 );
@@ -75,6 +77,8 @@ chrome.storage.sync.get(
 chrome.storage.onChanged.addListener((changes) => {
     if (changes.intervalMs) delayMs = changes.intervalMs.newValue;
     if (changes.enabled !== undefined) isEnabled = changes.enabled.newValue;
+    if (changes.endPercentage) END_PERCENTAGE = changes.endPercentage.newValue / 100;
+    if (changes.maxRepeat) MAX_REPEAT = changes.maxRepeat.newValue;
 
     // Restart watcher with updated config
     startWatcher();
