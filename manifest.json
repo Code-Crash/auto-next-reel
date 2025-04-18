@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Next Reel",
     "version": "1.0",
-    "description": "Automatically skip to the next video when progress reaches 90%.",
+    "description": "Automatically skip to the next reel when progress reaches 90%.",
     "permissions": [
         "storage"
     ],

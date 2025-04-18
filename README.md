@@ -6,7 +6,7 @@ A Chrome Extension that automatically clicks the **"Next Reel"** button on suppo
 
 - ⏱️ Automatically detects when a reel is about to finish.
 - 📈 Dynamically calculates the playback speed to adjust the slider threshold.
-- 🔁 Clicks the "Next reel" button only once per reel (with cooldown).
+- 🔁 Clicks the "Next video" button only once per reel (with cooldown).
 - ⚙️ Customizable polling interval via Chrome extension storage.
 - 🧠 Lightweight, non-intrusive, and efficient.
 
