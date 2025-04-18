@@ -15,7 +15,7 @@ chrome.storage.sync.get(
 
 input.addEventListener("change", () => {
     const newVal = parseInt(input.value);
-    if (!isNaN(newVal) && newVal >= 100) {
+    if (!isNaN(newVal) && newVal >= 99) {
         chrome.storage.sync.set({ intervalMs: newVal });
     }
 });
@@ -28,7 +28,7 @@ toggle.addEventListener("change", () => {
 
 endPercentageInput.addEventListener("change", () => {
     const newVal = parseFloat(endPercentageInput.value);
-    if (!isNaN(newVal) && newVal >= 5 && newVal <= 100) {
+    if (!isNaN(newVal) && newVal >= 5 && newVal <= 99) {
         chrome.storage.sync.set({ endPercentage: newVal });
     }
 });
