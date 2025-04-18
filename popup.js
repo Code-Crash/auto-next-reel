@@ -1,7 +1,7 @@
 const input = document.getElementById("intervalInput");
 const toggle = document.getElementById("toggleEnable");
 
-chrome.storage.sync.get({ intervalMs: 10, enabled: true }, (data) => {
+chrome.storage.sync.get({ intervalMs: 1, enabled: true }, (data) => {
     input.value = data.intervalMs;
     toggle.checked = data.enabled;
 });

@@ -36,6 +36,12 @@ input[type="number"] {
     text-align: center;
 }
 
+.note_sub {
+    font-size: 8px;
+    color: #717171;
+    text-align: center;
+}
+
 /* Toggle Switch */
 .switch {
     position: relative;

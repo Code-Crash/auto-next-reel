@@ -4,8 +4,8 @@
  * Observes configuration from Chrome storage and supports dynamic updates.
  */
 
-const DEFAULT_INTERVAL_MS = 10; // Default polling interval
-const SLIDER_THRESHOLD = 100;     // Value to trigger "Next video"
+const DEFAULT_INTERVAL_MS = 0; // Default polling interval
+const SLIDER_THRESHOLD = 99;     // Value to trigger "Next video"
 let currentInterval = null;
 let delayMs = DEFAULT_INTERVAL_MS;
 let isEnabled = true;
