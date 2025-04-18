@@ -1,12 +1,12 @@
-# Auto Next Video Extension
+# Auto Next Reel Extension
 
-A Chrome Extension that automatically clicks the **"Next video"** button on supported video platforms (e.g., YouTube) when the playback slider reaches the end. The extension intelligently calculates the slider progress speed and dynamically adjusts its behavior to ensure accurate syncing with the video playback.
+A Chrome Extension that automatically clicks the **"Next Reel"** button on supported reel platforms (e.g., YouTube) when the playback slider reaches the end. The extension intelligently calculates the slider progress speed and dynamically adjusts its behavior to ensure accurate syncing with the reel playback.
 
 ## 🚀 Features
 
-- ⏱️ Automatically detects when a video is about to finish.
+- ⏱️ Automatically detects when a reel is about to finish.
 - 📈 Dynamically calculates the playback speed to adjust the slider threshold.
-- 🔁 Clicks the "Next video" button only once per video (with cooldown).
+- 🔁 Clicks the "Next reel" button only once per reel (with cooldown).
 - ⚙️ Customizable polling interval via Chrome extension storage.
 - 🧠 Lightweight, non-intrusive, and efficient.
 
@@ -15,7 +15,7 @@ A Chrome Extension that automatically clicks the **"Next video"** button on supp
 - Periodically polls the progress slider (`div[role="slider"]`).
 - Tracks the `aria-valuenow` (percentage complete).
 - Estimates the speed at which the slider value is changing.
-- Predicts when the video will end and clicks the `"Next video"` button.
+- Predicts when the reel will end and clicks the `"Next Reel"` button.
 - Ensures no repeated or accidental clicks via a cooldown timer.
 
 ## 📁 File Structure
@@ -51,7 +51,7 @@ Settings are saved using Chrome's `chrome.storage.sync`.
 
 ## 🧪 Supported Platforms
 
-This extension was designed for platforms using a `<div role="slider">` for the playback progress and a `"Next video"` button with `aria-label="Next video"` (e.g., YouTube, playlists, some learning platforms). It can be customized for others.
+This extension was designed for platforms using a `<div role="slider">` for the playback progress and a `"Next Reel"` button with `aria-label="Next Reel"` (e.g., YouTube, playlists, some learning platforms). It can be customized for others.
 
 ## 📃 License
 
@@ -59,4 +59,4 @@ MIT License
 
 ---
 
-Created with ❤️ to skip the wait, keep the videos rolling, embrace laziness, and innovate 🚀.
+Created with ❤️ to skip the wait, keep the reels rolling, embrace laziness, and innovate 🚀.
