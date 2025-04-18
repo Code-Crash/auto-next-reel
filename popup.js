@@ -14,5 +14,8 @@ input.addEventListener("change", () => {
 });
 
 toggle.addEventListener("change", () => {
-    chrome.storage.sync.set({ enabled: toggle.checked });
+    const newValue = toggle.checked;
+    chrome.storage.sync.set({ enabled: newValue });
+    chrome.runtime.sendMessage({ updateIcon: newValue });
 });
+
